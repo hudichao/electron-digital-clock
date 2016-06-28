@@ -1,0 +1,30 @@
+{
+  "name": "electron-digital-clock",
+  "productName": "数字表",
+  "version": "1.0.0",
+  "description": "css,js copied from [http://tutorialzine.com/2013/06/digital-clock/](http://tutorialzine.com/2013/06/digital-clock/)",
+  "main": "main.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "electron .",
+    "release": "electron-packager . --platform=darwin --arch=x64 --overwrite",
+    "release all": "electron-packager . --all --overwrite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hudichao/electron-digital-clock.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hudichao/electron-digital-clock/issues"
+  },
+  "homepage": "https://github.com/hudichao/electron-digital-clock#readme",
+  "devDependencies": {
+    "electron-prebuilt": "*"
+  },
+  "dependencies": {
+  }
+}
