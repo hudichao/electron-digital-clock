@@ -16,16 +16,16 @@ function createMenu() {
         },
       ]
     },
-    {
-      label: 'Help',
-      role: 'help',
-      submenu: [
-        {
-          label: 'Learn More',
-          click() { require('electron').shell.openExternal('https://github.com/hudichao/electron-digital-clock#readme'); }
-        },
-      ]
-    },
+    // {
+    //   label: 'Help',
+    //   role: 'help',
+    //   submenu: [
+    //     {
+    //       label: 'Learn More',
+    //       click() { require('electron').shell.openExternal('https://github.com/hudichao/electron-digital-clock#readme'); }
+    //     },
+    //   ]
+    // },
   ];
 
   if (process.platform === 'darwin') {

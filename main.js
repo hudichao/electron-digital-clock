@@ -15,12 +15,13 @@ function createWindow() {
     width: 370,
     height: 114,
     x: 100000,
-    y: 0,
+    y: 100,
     frame: false,
     // titleBarStyle: "hidden",
     // useContentSize: true,
     alwaysOnTop: true,
     resizable: false,
+    show: false
   });
 
   mainWindow.loadURL('file://'+ __dirname +'/app/index.html');
@@ -35,6 +36,13 @@ function createWindow() {
   //open the devtools
   // mainWindow.webContents.openDevTools();
 
+  ipcMain.on("toggle-setting-window", function() {
+    require("./toggleSetting.js")(mainWindow)
+  })
+
+  mainWindow.once("ready-to-show", function() {
+    mainWindow.show()
+  })
   mainWindow.on('closed', () => {
     mainWindow = null;
   });

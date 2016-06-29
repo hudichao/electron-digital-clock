@@ -14,11 +14,27 @@ function setTray(mainWindow) {
   // tray = new Tray("/resource/icon.png")
   // not ok
   // tray = new Tray("../resource/icon.png")
-
+  const contextMenu = Menu.buildFromTemplate([
+    {
+      label: "白天模式", 
+      type: "radio", 
+      checked: true,
+      click() {
+        mainWindow.webContents.send("day-mode")
+      }
+    },
+    {
+      label: "夜晚模式", 
+      type: "radio",
+      click() {
+        mainWindow.webContents.send("night-mode")
+      }
+    }
+  ])
 
 
   tray.setToolTip("This is cool")
-
+  tray.setContextMenu(contextMenu)
   // const contextMenu = Menu.buildFromTemplate([])
 
 

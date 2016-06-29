@@ -16,6 +16,7 @@ packager({
     "app-copyright": "Copyright (C) 2016 "+package["author"]+".",// コピーライト
     tmpdir: false,
     ignore: ["node_modules/electron-*"],
+    prune: true,
     "version-string": {// Windowsのみのオプション
         CompanyName: "x",
         FileDescription: package["name"],

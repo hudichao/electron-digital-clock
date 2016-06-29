@@ -1,3 +1,5 @@
+const {ipcRenderer} = require("electron")
+
 $(function(){
 
 	// Cache some selectors
@@ -103,5 +105,18 @@ $(function(){
 	$('a.button').click(function(){
 		clock.toggleClass('light dark');
 	});
+
+
+	ipcRenderer.on("day-mode", function() {
+		clock.removeClass("dark").addClass("light")
+	})
+
+	ipcRenderer.on('night-mode', function() {
+		clock.removeClass("light").addClass("dark")
+	})
+
+	$(".alarm").on("click", function() {
+		ipcRenderer.send("toggle-setting-window")
+	})
 
 });
