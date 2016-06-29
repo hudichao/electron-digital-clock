@@ -43,7 +43,7 @@ function createMenu() {
         {
           label: 'Quit',
           accelerator: 'Command+Q',
-          click() { app.quit(); }
+          click() { require('electron').app.quit(); }
         },
       ]
     });
