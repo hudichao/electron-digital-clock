@@ -6,19 +6,26 @@
 
 const {app, BrowserWindow, Menu, ipcMain} = require("electron")
 
+global.shareObj = {
+  alarm_counter: null,
+  translation: null
+}
 
 let mainWindow = null
-
+let tray = null
 function createWindow() {
   
   mainWindow = new BrowserWindow({
-    width: 370,
-    height: 114,
+    // width: 370,
+    // height: 114,
+    width: 360, // 450 * 0.8,
+    height: 155, // 194 * 0.8,
     x: 100000,
     y: 100,
-    frame: false,
-    // titleBarStyle: "hidden",
-    // useContentSize: true,
+    // frame: false,
+    // 还是觉得有个关闭交互好一点。
+    titleBarStyle: "hidden",
+    useContentSize: true,
     alwaysOnTop: true,
     resizable: false,
     show: false
@@ -26,12 +33,13 @@ function createWindow() {
 
   mainWindow.loadURL('file://'+ __dirname +'/app/index.html');
 
+  global.shareObj.translation = require("./translation.js")(app.getLocale())
+
   // create menu
   require("./createMenu.js")()
 
-
   // 设置托盘图标
-  require("./setTray.js")(mainWindow);
+  require("./setTray.js")(tray, mainWindow);
 
   //open the devtools
   // mainWindow.webContents.openDevTools();
@@ -66,7 +74,6 @@ app.on('window-all-closed', () => {
 });
 
 app.on('ready', createWindow);
-
 
 
 

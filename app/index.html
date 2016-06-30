@@ -14,32 +14,26 @@
   </head>
 
   <body>
-
-    <div id="clock" class="light">
-      <div class="display">
-        <div class="weekdays"></div>
-        <div class="ampm"></div>
-        <div class="alarm"></div>
-        <div class="digits"></div>
+    <div class="clock-wrapper">
+      <div id="clock" class="light">
+        <div class="display">
+          <div class="weekdays"></div>
+          <div class="ampm"></div>
+          <div class="alarm"></div>
+          <div class="digits"></div>
+        </div>
       </div>
     </div>
+    <audio id="alarm-ring" preload>
+      <source src="assets/audio/ticktac.mp3" type="audio/mpeg" />
+    </audio>
 
-<!--     <div class="button-holder">
-      <a class="button">Switch Theme</a>
-    </div> -->
-
-<!--     <footer>
-            <a class="tz" href="http://tutorialzine.com/2013/06/digital-clock/">Making a Digital Clock with jQuery &amp; CSS3</a>
-            <div id="tzine-actions"></div>
-            <span class="close"></span>
-        </footer> -->
-        
-    <!-- JavaScript Includes -->
     <script>
       window.jQuery = window.$ = require('./lib/jquery');
     </script>
     <!-- <script src="lib/jquery.js"></script> -->
     <script src="lib/moment.js"></script>
+    <script src="lib/vue.js"></script>
     <script src="assets/js/script.js"></script>
 
   </body>

@@ -1,0 +1,9 @@
+{
+  "Language": "语言",
+  "Alarm": "闹钟",
+  "Set": "设置",
+  "notification": {
+    "title": "嘀嘀嘀",
+    "body": "时间到~~~~"
+  }
+}

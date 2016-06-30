@@ -4,8 +4,12 @@
   "version": "1.0.0",
   "description": "css,js copied from [http://tutorialzine.com/2013/06/digital-clock/](http://tutorialzine.com/2013/06/digital-clock/)",
   "main": "main.js",
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "i18n": "^0.8.3"
+  },
+  "devDependencies": {
+    "electron-prebuilt": "*"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "electron .",
@@ -20,10 +24,5 @@
   "bugs": {
     "url": "https://github.com/hudichao/electron-digital-clock/issues"
   },
-  "homepage": "https://github.com/hudichao/electron-digital-clock#readme",
-  "devDependencies": {
-    "electron-prebuilt": "*"
-  },
-  "dependencies": {
-  }
+  "homepage": "https://github.com/hudichao/electron-digital-clock#readme"
 }

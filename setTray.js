@@ -1,8 +1,7 @@
 const {app, Menu, Tray} = require("electron")
 
 
-function setTray(mainWindow) {
-  let tray = null
+function setTray(tray, mainWindow) {
   console.log(__dirname + "/resource/icon.png")
   // this is ok
   tray = new Tray(__dirname + "/resource/icon.png")

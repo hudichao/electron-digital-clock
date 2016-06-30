@@ -8,11 +8,12 @@ function make() {
   if (settingWindow === null) {
     createWindow()
   } else {
-    if (settingWindow.isVisible()) {
-      settingWindow.hide()
-    } else {
-      settingWindow.show()
-    }
+    // if (settingWindow.isVisible()) {
+    //   settingWindow.hide()
+    // } else {
+    //   settingWindow.show()
+    // }
+    settingWindow.close()
   }
   function createWindow(mainWindow) {
     
@@ -22,6 +23,7 @@ function make() {
       modal: true,
       parent: mainWindow,
       alwaysOnTop: true,
+      resizable: false,
       backgroundColor: '#2e2c29',
       show: false
     });

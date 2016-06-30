@@ -1,4 +1,4 @@
-const {Menu} = require("electron")
+const {Menu, ipcMain} = require("electron")
 function createMenu() {
   const template = [
     {
@@ -16,6 +16,38 @@ function createMenu() {
         },
       ]
     },
+    {
+      label: global.shareObj.translation.Alarm,
+      submenu: [
+        {
+          label: global.shareObj.translation.Set,
+          click() {
+            ipcMain.emit("toggle-setting-window")
+          }
+        }
+      ]
+    },
+    {
+      label: global.shareObj.translation.Language,
+      submenu: [
+        {
+          label: "中文",
+          type: "radio",
+          checked: global.shareObj.translation === "zh-CN",
+          click() {
+            global.shareObj.translation = require("./translation.js")("zh-CN")
+          }
+        },
+        {
+          label: "English",
+          type: "radio",
+          checked: global.shareObj.translation === "en-US",
+          click() {
+            global.shareObj.translation = require("./translation.js")("en-US")
+          }
+        }
+      ]
+    }
     // {
     //   label: 'Help',
     //   role: 'help',

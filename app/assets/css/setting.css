@@ -1,6 +1,3 @@
-* {
-  margin :0;
-}
 /*-------------------------
   Alarm Dialog
 --------------------------*/
@@ -81,28 +78,10 @@ input::-webkit-inner-spin-button {
   box-shadow:0 2px 2px #eee;
   padding:13px 22px;
   margin:3px;
+  width: 60px;
 }
-a.button{
-  background-color:#f6a7b3;
-  
-  background-image:-webkit-linear-gradient(top, #f6a7b3, #f0a3af);
-  background-image:-moz-linear-gradient(top, #f6a7b3, #f0a3af);
-  background-image:linear-gradient(top, #f6a7b3, #f0a3af);
-
-  border:1px solid #eb9ba7;
-  border-radius:2px;
-
-  box-shadow:0 2px 2px #ccc;
-
-  color:#fff;
-  text-decoration: none !important;
-  padding:15px 20px;
-  display:inline-block;
-  cursor:pointer;
-}
-
-a.button:hover{
-  opacity:0.9;
+#alarm-dialog .button-holder .button:first-child {
+  margin-right: 20px; 
 }
 .button.blue{
   background-color:#82cddd;
